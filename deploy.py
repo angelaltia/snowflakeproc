@@ -1,7 +1,7 @@
 import snowflake.connector
 
 # Configuración de conexión a Snowflake
-account = 'in12547'
+account = 'll47096.eu-west-3'
 user = 'ANGELNAVACERRADA'
 password = 'e6MM$i2R'
 warehouse = 'my_warehouse'
