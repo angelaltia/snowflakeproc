@@ -3,7 +3,7 @@ import os
 
 # Configuración de conexión a Snowflake
 ctx = snowflake.connector.connect(
-    account = 'll47096.eu-west-3',
+    account = 'OVVFRTA-VE94811',
     user = 'ANGELNAVACERRADA',
     password = 'e6MM$i2R',
     warehouse = 'my_warehouse',
