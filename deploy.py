@@ -1,14 +1,12 @@
 import snowflake.connector
 
-# Configuración de conexión a Snowflake
-account = 'OVVFRTA-VE94811'
-user = 'ANGELNAVACERRADA'
-password = 'e6MM$i2R'
-warehouse = 'my_warehouse'
-database = 'my_database'
-schema = 'my_schema'
+account = "ab35449.eu-west-1"
+user = "USRHistoricalCalculations"
+password = "Uh&20240531$"
+warehouse = "COMPUTE_WH"
+database = "DEV_XELIO"
+schema = "RAW"
 
-# Conectar a Snowflake
 ctx = snowflake.connector.connect(
     user=user,
     password=password,
@@ -17,11 +15,9 @@ ctx = snowflake.connector.connect(
 
 cs = ctx.cursor()
 
-# Leer el código del procedimiento desde el archivo
 with open('snowproc.py', 'r') as file:
     procedure_code = file.read()
 
-# Crear o reemplazar el procedimiento en Snowflake
 try:
     cs.execute(f"USE WAREHOUSE {warehouse}")
     cs.execute(f"USE DATABASE {database}")

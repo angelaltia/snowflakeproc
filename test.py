@@ -1,14 +1,13 @@
 import snowflake.connector
 import os
 
-# Configuración de conexión a Snowflake
 ctx = snowflake.connector.connect(
-    account = 'OVVFRTA-VE94811',
-    user = 'ANGELNAVACERRADA',
-    password = 'e6MM$i2R',
-    warehouse = 'my_warehouse',
-    database = 'my_database',
-    schema = 'my_schema'
+    account = "ab35449.eu-west-1",
+    user = "USRHistoricalCalculations",
+    password = "Uh&20240531$",
+    warehouse = "COMPUTE_WH",
+    database = "DEV_XELIO",
+    schema = "RAW"
 )
 
 print("Conexión exitosa!")
