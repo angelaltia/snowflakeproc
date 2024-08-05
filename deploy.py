@@ -18,7 +18,7 @@ cs = ctx.cursor()
 with open('snowproc.py', 'r') as file:
     procedure_code = file.read()
 
-procedure_code = f"""'''{procedure_code}'''"""
+procedure_code = procedure_code.replace("'", "\\'")
 
 try:
     # Cambiar al warehouse, base de datos y esquema especificados
