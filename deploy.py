@@ -32,6 +32,7 @@ create_procedure_sql = f"""
     RETURNS TABLE(role STRING)
     LANGUAGE PYTHON
     RUNTIME_VERSION = '3.8'
+    PACKAGES = ('snowflake-snowpark-python')
     HANDLER = 'filter_by_role_git_deploy'
     AS
     $$
