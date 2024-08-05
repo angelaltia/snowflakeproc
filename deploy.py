@@ -22,9 +22,7 @@ with open('snowproc.py', 'r') as file:
     procedure_code = file.read()
 
 # Limpiar la indentación del código Python
-procedure_code = "\n".join(
-    [line if line.strip() == "" else "    " + line for line in procedure_code.split("\n")]
-)
+procedure_code = "\n".join([line.rstrip() for line in procedure_code.split("\n")])
 
 # Insertar el código Python en el procedimiento almacenado
 create_procedure_sql = f"""
