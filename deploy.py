@@ -1,5 +1,4 @@
 import snowflake.connector
-from snowflake.snowpark.functions import col
 # Configuración de la cuenta y credenciales
 account = "ab35449.eu-west-1"
 user = "ANGELNAVACERRADA"
