@@ -30,7 +30,7 @@ try:
         RETURNS TABLE(role STRING)
         LANGUAGE PYTHON
         RUNTIME_VERSION = '3.8'
-        HANDLER = 'filter_by_role'
+        HANDLER = 'filter_by_role_git_deploy'
         AS
         $$
         {procedure_code}
