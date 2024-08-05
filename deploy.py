@@ -17,12 +17,17 @@ cs = ctx.cursor()
 
 with open('snowproc.py', 'r') as file:
     procedure_code = file.read()
-procedure_code = procedure_code.replace("'", "''")
+
+procedure_code = f"""'''{procedure_code}'''"""
+
 try:
+    # Cambiar al warehouse, base de datos y esquema especificados
     cs.execute(f"USE WAREHOUSE {warehouse}")
     cs.execute(f"USE DATABASE {database}")
     cs.execute(f"USE SCHEMA {schema}")
-    cs.execute(f"""
+
+    # Crear o reemplazar el procedimiento almacenado en Snowflake
+    create_procedure_sql = f"""
         CREATE OR REPLACE PROCEDURE filter_by_role_procedure(
             table_name STRING,
             role STRING
@@ -35,7 +40,15 @@ try:
         $$
         {procedure_code}
         $$
-    """)
+    """
+    
+    print("SQL del Procedimiento:")
+    print(create_procedure_sql)
+
+    cs.execute(create_procedure_sql)
+    print("Procedimiento creado exitosamente")
+except snowflake.connector.errors.ProgrammingError as e:
+    print(f"Error al crear el procedimiento: {e}")
 finally:
     cs.close()
     ctx.close()
