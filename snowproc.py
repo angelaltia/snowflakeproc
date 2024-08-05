@@ -1,4 +1,2 @@
-from snowflake.snowpark.functions import col
-def filter_by_role_git_deploy(session, table_name, role):
-    df = session.table(table_name)
-    return df.filter(col("role") == role)
+def filter_by_role_git_deploy(session, table_name):
+    return session.table(table_name).limit(10)
