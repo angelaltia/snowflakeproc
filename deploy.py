@@ -18,7 +18,7 @@ cs = ctx.cursor()
 with open('snowproc.py', 'r') as file:
     procedure_code = file.read()
 
-procedure_code = procedure_code.replace("'", "\\'")
+procedure_code = "\n".join(["    " + line if line else line for line in procedure_code.split('\n')])
 
 try:
     # Cambiar al warehouse, base de datos y esquema especificados
