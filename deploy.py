@@ -17,7 +17,7 @@ cs = ctx.cursor()
 
 with open('snowproc.py', 'r') as file:
     procedure_code = file.read()
-
+procedure_code = procedure_code.replace("'", "''")
 try:
     cs.execute(f"USE WAREHOUSE {warehouse}")
     cs.execute(f"USE DATABASE {database}")
