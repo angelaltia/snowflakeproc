@@ -27,7 +27,7 @@ try:
             table_name STRING,
             role STRING
         )
-        RETURNS TABLE(role STRING, column1 TYPE, column2 TYPE, ...)
+        RETURNS TABLE(role STRING)
         LANGUAGE PYTHON
         RUNTIME_VERSION = '3.8'
         HANDLER = 'filter_by_role'
