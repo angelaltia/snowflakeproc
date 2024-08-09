@@ -111,3 +111,6 @@ try:
     print("Procedimiento creado exitosamente")
 except snowflake.connector.errors.ProgrammingError as e:
     print(f"Error al crear el procedimiento: {e}")
+
+cs.close()
+ctx.close()
